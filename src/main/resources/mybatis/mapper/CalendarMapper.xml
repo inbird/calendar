@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lesser.calendar.home.mapper.CalendarMapper">
+    <select id="getPlanList" parameterType="String" resultType="java.util.HashMap">
+        SELECT title,
+               start_day as start,
+               end_day as end
+        FROM calendar
+        WHERE start_day >= #{paramStartDay};
+    </select>
+
+    <insert id="insPlan" parameterType="map">
+        INSERT INTO calendar(ins_day_time, title, start_day, end_day)
+        VALUES(DATE_ADD(NOW(), INTERVAL 9 HOUR)
+               ,#{title}
+               ,#{start_day}
+               ,#{end_day}
+               );
+    </insert>
+
+    <delete id="delPlan" parameterType="map">
+        DELETE FROM calendar
+        WHERE title = #{title}
+        AND   start_day = #{start_day};
+    </delete>
+
+</mapper>
