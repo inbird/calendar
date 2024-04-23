@@ -28,9 +28,10 @@ public class CalendarController {
     public List<Map<String, Object>>  getPlanList(){
         // 현재 날짜 구하기 (시스템 시계, 시스템 타임존)
         int year = LocalDate.now().getYear();
-        int startYear = year-1;
+        //int startYear = year-1;
         //int endYear = year+1;
-        String startDay = startYear + "-01-01";
+        String startDay = year + "-01-01";
+        System.out.println("START:" + startDay);
         //String endDay = endYear + "-12-31";
         //log.info("Start Day:{}", startDay );
         return calendarService.getPlanList(startDay);
