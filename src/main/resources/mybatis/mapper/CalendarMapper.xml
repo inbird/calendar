@@ -25,4 +25,34 @@
         AND   start_day = #{start_day};
     </delete>
 
+
+    <select id="getAllMemberList" resultType="java.util.HashMap">
+        SELECT id,
+               name,
+               email
+        FROM member
+    </select>
+
+    <select id="getOneMember" parameterType="String" resultType="java.util.HashMap">
+        SELECT id,
+               name,
+               email
+        FROM member
+        WHERE id = #{id}
+    </select>
+
+
+    <insert id="insMember" parameterType="map">
+        INSERT INTO member
+        VALUES(#{id}
+              ,#{name}
+              ,#{email}
+              );
+    </insert>
+
+    <delete id="delMember" parameterType="String">
+        DELETE FROM member
+        WHERE id = #{id}
+    </delete>
+
 </mapper>

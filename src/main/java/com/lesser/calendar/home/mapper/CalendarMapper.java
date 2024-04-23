@@ -14,4 +14,12 @@ public interface CalendarMapper {
     void insPlan(Map<String, String> map);
 
     void delPlan(Map<String, String> map);
+
+    List<Map<String, String>> getAllMemberList();
+
+    Map<String, String> getOneMember(String paramID);
+
+    void insMember(Map<String, String> map);
+
+    void delMember(String paramID);
 }
