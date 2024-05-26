@@ -31,6 +31,9 @@
                name,
                email
         FROM member
+        ORDER BY id
+        LIMIT #{size}
+        OFFSET #{offset}
     </select>
 
     <select id="getOneMember" parameterType="String" resultType="java.util.HashMap">

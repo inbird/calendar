@@ -15,7 +15,7 @@ public interface CalendarMapper {
 
     void delPlan(Map<String, String> map);
 
-    List<Map<String, String>> getAllMemberList();
+    List<Map<String, String>> getAllMemberList(int size, int offset);
 
     Map<String, String> getOneMember(String paramID);
 

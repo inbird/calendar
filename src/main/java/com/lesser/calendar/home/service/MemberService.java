@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface MemberService {
-    List<Map<String, String>> getAllMemberList();
+    List<Map<String, String>> getAllMemberList(int size, int offset);
 
     Map<String, String> getOneMember(String paramID);
 

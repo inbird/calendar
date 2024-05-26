@@ -13,8 +13,8 @@ public class MemberServiceImpl implements MemberService {
     private final CalendarMapper calendarMapper;
 
     @Override
-    public List<Map<String, String>> getAllMemberList() {
-        return calendarMapper.getAllMemberList();
+    public List<Map<String, String>> getAllMemberList(int size, int offset) {
+        return calendarMapper.getAllMemberList(size, offset);
     }
 
     @Override
